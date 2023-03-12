@@ -33,6 +33,14 @@ body {
   transition: .3s;
 }
 
+.meme_img{
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 50%;
+  }
+
+
 @media(hover: hover){
 
 .accordion_wrap{
@@ -93,24 +101,17 @@ align-items: center;
 border:none;
 }
 
-.accordion label:hover + label + .accordion_image_container {
-color: #9e2b2b;
+
+.accordion:hover .cross{
+  opacity: 1; 
 
 }
 
 .accordion input:checked + label + .cross{
-transition: transform .35s;
-transform: rotate(45deg);
-color: #962929;   
-}
-
-
-
-.accordion:hover .cross{
-  opacity: 1; 
-}
-
-  
+  transition: all .35s;
+  transform: rotate(45deg);
+  color: #962929;   
+  }
 
 .accordion input{
 display: none;
@@ -120,25 +121,36 @@ display: none;
 color: #962929; 
 }
 
-.accordion input:checked + label + .accordion_image_container {
+.accordion input:checked + label + .accordion_image_container,
+.accordion input:hover  + label + .accordion_image_container{
 height: 100%;
 transform:scale(1);
 padding: 1rem;
-transition: all 1s ease;
+transition: all 2s ease;
 transition-property:2rem;
 }
 
-.accordion input:checked + label + .cross {
-transition: transform .35s;
-transform: rotate(90deg);
+.accordion input:checked + label + .accordion_image_container {
+  color: #962929; 
+  
+
+}
+
+.accordion input:active + label +.accordion_image_container{
+ opacity: 0.1;
+}
+
+
+.accordion input:checked +label +.cross {
+transform: rotate(45deg);
 
 }
 
 
-.meme_img{
-display: flex;
-align-items: center;
-margin: 0 auto;
-max-width: 50%;
 }
+
+@media (hover:none) {
+
+
+  
 }
