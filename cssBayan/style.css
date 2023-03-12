@@ -25,6 +25,16 @@ body {
 
 }
 
+
+.cross {
+  display: inline-block;
+  width: 0.8rem;
+  opacity: 0;
+  transition: .3s;
+}
+
+@media(hover: hover){
+
 .accordion_wrap{
 margin: 0 auto;
 max-width: 50%;
@@ -47,17 +57,21 @@ padding-left: 0;
 .accordion .accordion_image_container {
 height: 0;
 overflow: hidden;
+transition: 1s ease;
 transform:scale(0);
 
 }
 
 .accordion label {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
 cursor: pointer;
 display: block;
 width: 100%;
 color: #636060;
 z-index: 100;
-transition: color .35s;
+transition: color .35s ease-in-out;
 }
 
 .accordion_meme {
@@ -81,8 +95,23 @@ border:none;
 
 .accordion label:hover + label + .accordion_image_container {
 color: #9e2b2b;
-transform:scale(0);
+
 }
+
+.accordion input:checked + label + .cross{
+transition: transform .35s;
+transform: rotate(45deg);
+color: #962929;   
+}
+
+
+
+.accordion:hover .cross{
+  opacity: 1; 
+}
+
+  
+
 .accordion input{
 display: none;
 }
@@ -92,9 +121,11 @@ color: #962929;
 }
 
 .accordion input:checked + label + .accordion_image_container {
-height: auto;
+height: 100%;
 transform:scale(1);
 padding: 1rem;
+transition: all 1s ease;
+transition-property:2rem;
 }
 
 .accordion input:checked + label + .cross {
@@ -105,7 +136,9 @@ transform: rotate(90deg);
 
 
 .meme_img{
-display: block;
+display: flex;
+align-items: center;
 margin: 0 auto;
 max-width: 50%;
+}
 }
