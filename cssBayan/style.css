@@ -35,16 +35,19 @@ body {
   padding:1rem 1rem 1rem 1.5rem;
   margin: 0 auto;
   background-color: #F6F6ED;
+  cursor: pointer;
   }
   
-.accordion_title {
+.accordion_title{
   border-bottom:0.1rem solid #a6a6a6;
   padding-bottom:0.5rem;
   padding-left: 0;
+  margin-bottom: 0;
   }
 
  label:active .meme_title_container{
     color:#636060;
+
  }
   
 .accordion .accordion_image_container {
@@ -68,9 +71,9 @@ body {
   
 .accordion_meme {
   border-bottom:0.1rem solid #a6a6a6;
-  padding-bottom:1rem;
-  padding-top:1rem;
   padding-left: 0;
+  padding: 0;
+  margin: 0;
   }
   
 .meme_title_container{
@@ -79,6 +82,8 @@ body {
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 0.7rem;
+  padding-top: 0.7rem;
   }
   
 .accordion_meme:last-child{
@@ -143,6 +148,14 @@ body {
   transition-property:2rem;
 }
 
+.accordion input:checked + label > .meme_title_container + .accordion_image_container,
+.accordion input:hover  + label > .meme_title_container + .accordion_image_container{
+  height: 100%;
+  transform:scale(1);
+  padding: 1rem;
+  transition: all 1s ease-in;
+  transition-property:2rem;
+}
 
 
 .accordion input:checked + label + .accordion_image_container,
@@ -219,10 +232,10 @@ body {
   .cross{
     width: 0.8rem;
   }
-  .accordion_meme{
+ /* .accordion_meme{
     padding-bottom: 0.7rem;
     padding-top: 0.7rem;
-  }
+  }*/
 }
 
 
